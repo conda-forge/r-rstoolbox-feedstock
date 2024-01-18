@@ -1,4 +1,4 @@
-{% set version = '0.3.0' %}
+{% set version = "0.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RStoolbox_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RStoolbox/RStoolbox_{{ version }}.tar.gz
-  sha256: e76bd8592e5230237deaacaebf50ba622ffa8b4556b46105a0dce725ea1a52f6
+  sha256: f19ff112d3f8d3cf7a8655e5c22be98ebab7d81b4a1fb750f570b551a71530ac
 
 build:
-  merge_build_host: True  # [win]
-  number: 3
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -80,9 +80,7 @@ test:
 about:
   home: https://bleutner.github.io/RStoolbox/, https://github.com/bleutner/RStoolbox
   license: GPL-3.0-or-later
-  summary: Toolbox for remote sensing image processing and analysis such as calculating spectral
-    indices, principal component transformation, unsupervised and supervised classification
-    or fractional cover analyses.
+  summary: Toolbox for remote sensing image processing and analysis such as calculating spectral indices, principal component transformation, unsupervised and supervised classification or fractional cover analyses.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
