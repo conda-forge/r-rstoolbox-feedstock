@@ -1,4 +1,4 @@
-{% set version = "0.4.0" %}
+{% set version = "1.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RStoolbox_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RStoolbox/RStoolbox_{{ version }}.tar.gz
-  sha256: f19ff112d3f8d3cf7a8655e5c22be98ebab7d81b4a1fb750f570b551a71530ac
+  sha256: 8866ab50d2af011cbb8d8de100be6ce152f28a5f56b9770e809f7e19e2154ec1
 
 build:
   merge_build_host: true  # [win]
@@ -23,7 +23,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("c") }}            # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
