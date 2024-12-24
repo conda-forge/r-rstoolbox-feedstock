@@ -17,7 +17,7 @@ build:
     - lib/R/lib/
     - lib/
   # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
