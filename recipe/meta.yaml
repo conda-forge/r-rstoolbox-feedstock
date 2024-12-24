@@ -1,6 +1,5 @@
 {% set version = "1.0.0" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-rstoolbox
@@ -13,11 +12,11 @@ source:
   sha256: 8866ab50d2af011cbb8d8de100be6ce152f28a5f56b9770e809f7e19e2154ec1
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
+  # Checking windows to see if it passes. Uncomment the line if it fails.
   skip: true  # [win]
 
 requirements:
@@ -50,7 +49,6 @@ requirements:
     - libblas
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-caret >=6.0_79
     - r-dplyr
     - r-exactextractr
