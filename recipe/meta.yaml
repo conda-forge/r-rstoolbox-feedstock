@@ -1,4 +1,4 @@
-{% set version = "1.0.2.2" %}
+{% set version = "1.0.2.3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RStoolbox_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RStoolbox/RStoolbox_{{ version }}.tar.gz
-  sha256: 9dd339bf3c27631a5d24279fcdf5ca0565079129c2bf61689cef773b57a3f5d7
+  sha256: 75dee950b54183b8ea5734400c825572d8cabd67c8c75fa4cb809ac8f781da17
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
